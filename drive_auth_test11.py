@@ -9,10 +9,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 def authenticate_drive():
     scope = ['https://www.googleapis.com/auth/drive.readonly']
-    creds = ServiceAccountCredentials.from_json_keyfile_name(
-        r"C:\Users\selvi\Downloads\Streamlit-bot\client_secret.json",
-        scopes=scope
-    )
+    creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scopes=scope)
     service = build('drive', 'v3', credentials=creds)
     return service
 
